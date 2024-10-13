@@ -16,13 +16,13 @@ interface User {
 }
 
 interface UserListProps {
-  users: User[];
+  fileteredUsers: User[];
 }
 
-function UserList({ users }: UserListProps) {
+function UserList({ fileteredUsers }: UserListProps) {
   return (
     <div className={styles.userList}>
-      {users.map(user => (
+      {fileteredUsers.map(user => (
         <UserCard key={user.id} user={user} />
       ))}
     </div>
