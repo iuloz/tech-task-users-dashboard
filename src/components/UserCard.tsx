@@ -21,7 +21,7 @@ interface UserCardProps {
 
 function UserCard({ user }: UserCardProps) {
   return (
-    <Card className={styles.userCard}>
+    <Card className={styles.userCard} sx={{backgroundColor: '#F6F6F6'}}>
       <h2>{user.name}</h2>
       <p><span>Email:</span> {user.email}</p>
       <p><span>Phone:</span> {user.phone}</p>
