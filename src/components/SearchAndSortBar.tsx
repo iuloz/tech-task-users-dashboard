@@ -1,3 +1,5 @@
+import { TextField, Select, MenuItem, InputLabel, FormControl } from '@mui/material';
+import { Button } from '@mui/joy';
 import styles from '../SearchAndSortBar.module.scss';
 
 interface SearchAndSortBarProps {
@@ -19,19 +21,34 @@ function SearchAndSortBar({
 }: SearchAndSortBarProps) {
   return (
     <div className={styles.searchAndSortBar}>
-      <input
-        type="text"
-        placeholder="Search users by name..."
+      <TextField
+        label="Search users by name"
+        variant="outlined"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
+        fullWidth
+        size='small'
       />
-      <select value={sortBy} onChange={(e) => setSortBy(e.target.value as 'name' | 'email')}>
-        <option value="name">Sort by Name</option>
-        <option value="email">Sort by Email</option>
-      </select>
-      <button onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}>
+      <FormControl variant="outlined" fullWidth>
+        <InputLabel>Sort By</InputLabel>
+        <Select
+          value={sortBy}
+          onChange={(e) => setSortBy(e.target.value as 'name' | 'email')}
+          label="Sort By"
+          size='small'
+        >
+          <MenuItem value="name">Name</MenuItem>
+          <MenuItem value="email">Email</MenuItem>
+        </Select>
+      </FormControl>
+      <Button
+        variant="outlined" // Use "solid" for a filled button in MUI Joy
+        onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
+        fullWidth
+        size='sm'
+      >
         Sort Order: {sortOrder === 'asc' ? 'Ascending' : 'Descending'}
-      </button>
+      </Button>
     </div>
   );
 }

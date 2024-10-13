@@ -1,3 +1,4 @@
+import { Card } from '@mui/material';
 import styles from '../UserCard.module.scss';
 
 interface User {
@@ -20,13 +21,13 @@ interface UserCardProps {
 
 function UserCard({ user }: UserCardProps) {
   return (
-    <div className={styles.userCard}>
+    <Card className={styles.userCard}>
       <h2>{user.name}</h2>
       <p><span>Email:</span> {user.email}</p>
       <p><span>Phone:</span> {user.phone}</p>
       <p><span>Website:</span> {user.website}</p>
       <p><span>Address:</span> {`${user.address.street}, ${user.address.city}`}</p>
-    </div>
+    </Card>
   );
 }
 
