@@ -4,6 +4,7 @@
   border-radius: 5px;
   padding: 20px;
   width: 300px;
+  font-family: 'Inter';
 
   h2 {
     margin-bottom: 10px;
@@ -12,5 +13,9 @@
 
   p {
     margin: 5px 0;
+  }
+
+  span {
+    font-weight: 600;
   }
 }
